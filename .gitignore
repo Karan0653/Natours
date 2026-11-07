@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Parcel generated files
+.cache/
+starter/.cache/
+starter/public/js/bundle.js
+starter/public/js/bundle.js.map
+
+# Environment variables
+.env
+starter/config.env
