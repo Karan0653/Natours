@@ -5,7 +5,7 @@ export const displayMap = (locations) => {
 
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/jonasschmedtmann/cjvi9q8jd04mi1cpgmg7ev3dy',
+    style: 'mapbox://styles/karan60525/cmw6ppw4w00wb01r14sccerbe',
     scrollZoom: false,
     // center: [-118.113491, 34.111745],
     // zoom: 10,
@@ -39,12 +39,13 @@ export const displayMap = (locations) => {
     bounds.extend(loc.coordinates);
   });
 
-  map.fitBounds(bounds, {
-    padding: {
-      top: 200,
-      bottom: 150,
-      left: 100,
-      right: 100,
-    },
+  map.on('load', () => {
+    map.resize();
+
+    map.fitBounds(bounds, {
+      padding: 60,
+      maxZoom: 12,
+      duration: 1000,
+    });
   });
 };
