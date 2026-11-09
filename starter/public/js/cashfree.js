@@ -13,7 +13,7 @@ export const bookTour = async (tourId) => {
       `http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`,
     );
 
-    console.log(session);
+    // console.log(session);
 
     // 2) Extract payment session ID
     const paymentSessionId = session.data.paymentSessionId;
@@ -24,7 +24,7 @@ export const bookTour = async (tourId) => {
       redirectTarget: '_self',
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     showAlert('error', err.message || 'Payment initialization failed');
   }
 };

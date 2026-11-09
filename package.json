@@ -7,8 +7,9 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon starter/server.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon starter/server.js",
+    "start": "node starter/server.js",
+    "dev": "nodemon starter/server.js",
+    "start:prod": "cross-env NODE_ENV=production node starter/server.js",
     "debug": "ndb starter/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:js": "parcel watch ./starter/public/js/index.js --out-dir ./starter/public/js --out-file bundle.js",
@@ -53,5 +54,8 @@
     "ndb": "^1.1.5",
     "nodemon": "^3.1.14",
     "parcel-bundler": "^1.12.5"
+  },
+  "engines": {
+    "node": ">=24.11.1 <25"
   }
 }

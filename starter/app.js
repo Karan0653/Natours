@@ -7,6 +7,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const compression = require('compression');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./Controller/errorController');
@@ -97,6 +98,8 @@ app.use(
     ],
   }),
 );
+
+app.use(compression());
 
 // ROUTING MIDDLEWARE
 app.use('/', viewRouter);

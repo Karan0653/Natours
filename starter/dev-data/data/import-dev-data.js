@@ -6,7 +6,7 @@ dotenv.config({ path: './config.env' });
 const Tour = require('../../Models/tourModel');
 const Review = require('../../Models/reviewModel');
 const User = require('../../Models/userModel');
-const { log } = require('console');
+
 
 const DB = process.env.DB.replace('<PASSWORD>', process.env.DB_PASSWORD);
 
@@ -57,7 +57,7 @@ const deleteData = async () => {
   }
 };
 
-console.log(process.argv);
+// console.log(process.argv);
 
 if (process.argv[2] === '--import') {
   importData();
