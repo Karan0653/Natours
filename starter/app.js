@@ -8,6 +8,7 @@ const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./Controller/errorController');
@@ -25,6 +26,11 @@ app.set('views', path.join(__dirname, 'views'));
 //1. Global Middlewares
 // to serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+
+//cors
+app.use(cors());
+
+app.options('*', cors());
 
 //Set security HTTP headers
 
